@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 else:
                     print("Unable to calculate the value.")
 
-            is_exit = input("Do you want to exit? (y/n): ")
+            is_exit = input("\n\nDo you want to exit? (y/n): ")
             if is_exit.lower() == "y":
                 break
         except ValueError as e:
