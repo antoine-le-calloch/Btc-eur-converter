@@ -16,7 +16,7 @@ if __name__ == "__main__":
             else:
                 value = btc_price * input_quantity
                 if value is not None:
-                    print(f"The value of {input_quantity} BTC on {input_date} was approximately {value:.2f} EUR.")
+                    print(f"The price of {input_quantity} BTC on {input_date} was approximately {value:.2f} EUR.")
                 else:
                     print("Unable to calculate the value.")
 
