@@ -1,7 +1,7 @@
 # Bitcoin Value Calculator
 
 ## Overview
-**BTC EUR converter ** is a Python script that convert a given amount of Bitcoin (BTC) in EUR by fetching historical prices using the CoinMarketCap API.
+**BTC EUR converter ** is a Python script that convert a given amount of Bitcoin (BTC) in EUR by fetching historical prices using the CryptoCompare API.
 
 ## Features
 - Retrieve real-time Bitcoin prices in EUR.
@@ -10,7 +10,7 @@
 
 ## Requirements
 - Python 3.7 or higher
-- An API key from [CoinMarketCap](https://coinmarketcap.com/api/)
+- An API key from [CryptoCompare](https://min-api.cryptocompare.com/)
 
 ## Setup
 1. Clone this repository:
@@ -22,9 +22,9 @@
    ```bash
    pip install -r requirements.txt
 
-4. Create a .env file with CoinMarketCap API key: 
+4. Create a .env file with CryptoCompare API key: 
    ```bash
-   COINMARKETCAP_API_KEY=your_api_key_here
+   CRYPTOCOMPARE_API_KEY=your_api_key
 
 5. Run the script:
    ```bash

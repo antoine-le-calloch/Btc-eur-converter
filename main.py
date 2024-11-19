@@ -1,5 +1,5 @@
 from input_data import get_input_data
-from coinmarketcap_api import get_bitcoin_price_on_date
+from cryptocompare_api import get_bitcoin_price_on_date
 
 if __name__ == "__main__":
     """
