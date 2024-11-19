@@ -5,12 +5,10 @@ if __name__ == "__main__":
     """
     Main function to interact with the user and calculate the value in EUR.
     """
+    date_format, input_date, input_quantity = get_input_data()
     while True:
         try:
-            date_format, input_date, input_quantity = get_input_data()
-
             btc_price = get_bitcoin_price_on_date(input_date)
-
             if btc_price is None:
                 print("Unable to fetch the Bitcoin price.")
             else:
