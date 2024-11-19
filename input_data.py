@@ -6,16 +6,17 @@ def get_format():
     Prompts the user to select a date format.
     :return: Date format string
     """
+    format_separator = input("Select a date separator (1: -, 2: /): ") == "1"
     input_format = input("Select a date format (1: DD-MM-YYYY, 2: MM-DD-YYYY, 3: YYYY-MM-DD): ")
     if input_format == "1":
-        return "%d-%m-%Y"
+        return "%d-%m-%Y" if format_separator else "%d/%m/%Y"
     elif input_format == "2":
-        return "%m-%d-%Y"
+        return "%m-%d-%Y" if format_separator else "%m/%d/%Y"
     elif input_format == "3":
-        return "%Y-%m-%d"
+        return "%Y-%m-%d" if format_separator else "%Y/%m/%d"
     else:
         print("Invalid date format. Defaulting to DD-MM-YYYY.")
-        return "%d-%m-%Y"
+        return "%d-%m-%Y" if format_separator else "%d/%m/%Y"
 
 
 def get_date_and_quantity(date_format):
