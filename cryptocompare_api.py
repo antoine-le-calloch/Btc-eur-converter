@@ -1,4 +1,6 @@
 import os
+import time
+
 import requests
 from dotenv import load_dotenv
 
@@ -9,17 +11,26 @@ API_KEY = os.getenv("CRYPTOCOMPARE_API_KEY")
 def get_bitcoin_price_on_date(date):
     """
     Fetches the Bitcoin price in EUR on a specific date using the CryptoCompare API.
-
     :param date: Date in format 'DD-MM-YYYY'
     :return: Bitcoin price in EUR on that date
     """
-    
+    # Convert date to Unix timestamp
+    timestamp = int(time.mktime(time.strptime(date, "%d-%m-%Y")))
+    url = f"https://min-api.cryptocompare.com/data/v2/histoday"
+    params = {
+        "fsym": "BTC",
+        "tsym": "EUR",
+        "limit": 1,
+        "toTs": timestamp,
+    }
 
     try:
-        
-        return None
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        if "Data" in data and "Data" in data["Data"]:
+            btc_price = data["Data"]["Data"][-1]["close"]
+            return btc_price
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from the API: {e}")
-    except KeyError:
-        print("Failed to parse the price data.")
+        print(f"API request failed: {e}")
     return None
