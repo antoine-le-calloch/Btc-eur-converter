@@ -18,7 +18,7 @@ def get_format():
         return "%d-%m-%Y"
 
 
-def get_input_data(date_format):
+def get_date_and_quantity(date_format):
     """
     Prompts the user to choose a date and Bitcoin quantity.
     :return: Selected format, date and Bitcoin quantity as a tuple
@@ -41,4 +41,4 @@ def get_input_data(date_format):
         if input_quantity <= 0:
             print("The Bitcoin amount must be a positive number.")
 
-    return date_format, input_date, input_quantity
+    return input_date, input_quantity
