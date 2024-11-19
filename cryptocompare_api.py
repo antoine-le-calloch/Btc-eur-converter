@@ -8,14 +8,15 @@ load_dotenv()
 API_KEY = os.getenv("CRYPTOCOMPARE_API_KEY")
 
 
-def get_bitcoin_price_on_date(date):
+def get_bitcoin_price_on_date(date, date_format):
     """
     Fetches the Bitcoin price in EUR on a specific date using the CryptoCompare API.
-    :param date: Date in format 'DD-MM-YYYY'
+    :param date: Date to fetch the Bitcoin price
+    :param date_format: Format of the date
     :return: Bitcoin price in EUR on that date
     """
     # Convert date to Unix timestamp
-    timestamp = int(time.mktime(time.strptime(date, "%d-%m-%Y")))
+    timestamp = int(time.mktime(time.strptime(date, date_format)))
     url = f"https://min-api.cryptocompare.com/data/v2/histoday"
     params = {
         "fsym": "BTC",

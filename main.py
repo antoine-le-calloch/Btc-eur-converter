@@ -10,7 +10,7 @@ if __name__ == "__main__":
     while True:
         try:
             input_date, input_quantity = get_date_and_quantity(date_format)
-            btc_price = get_bitcoin_price_on_date(input_date)
+            btc_price = get_bitcoin_price_on_date(input_date, date_format)
             if btc_price is None:
                 print("Unable to fetch the Bitcoin price.")
             else:
