@@ -21,7 +21,7 @@ def get_format():
 def get_date_and_quantity(date_format):
     """
     Prompts the user to choose a date and Bitcoin quantity.
-    :return: Selected format, date and Bitcoin quantity as a tuple
+    :return: date and Bitcoin quantity as a tuple
     """
     input_date = None
     while input_date is None:
