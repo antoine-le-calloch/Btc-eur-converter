@@ -25,12 +25,3 @@ if __name__ == "__main__":
                 break
         except ValueError as e:
             print(f"Error: {e}")
-
-"""
-1
-01-05-2021
-23-11-2019
-0.5
-
-Price btc : 48109.96
-"""
